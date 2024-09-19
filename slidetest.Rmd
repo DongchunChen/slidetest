@@ -1,0 +1,37 @@
+---
+title: "DongchunChen Pre for DSCI_521"
+output: revealjs::revealjs_presentation
+---
+
+
+## Exploration of the Penguins Dataset
+The `palmerpenguins` dataset contains information about penguin species and various measurements.
+
+## Our focus 
+- Body Mass vs Bill length
+- Body Mass vs Flipper length
+
+```{r, echo=FALSE}
+library(ggplot2)
+library(palmerpenguins)
+```
+
+## Body Mass vs Bill Length
+```{r, fig.width=5, fig.height=3.5, warning=FALSE}
+library(ggplot2)
+ggplot(penguins, aes(x = bill_length_mm, y = body_mass_g, color = species)) +
+  geom_point() +
+  labs(title = "Body Mass vs Bill Length by Species",
+    x = "Bill Length (mm)",
+    y = "Body Mass (g)") + theme_minimal()
+```
+
+## Body Mass vs Flipper Length
+```{r, fig.width=5, fig.height=3.5, warning=FALSE}
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  geom_point() +
+  labs(title = "Body Mass vs Flipper Length by Species",
+    x = "Flipper Length (mm)",
+    y = "Body Mass (g)")+ theme_minimal()
+```
+
